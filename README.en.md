@@ -101,6 +101,14 @@ The core spirit of this system is "AI Agency." You just need to give a natural l
 
 The AI will automatically modify the corresponding script paths and writing rules. Your brain is only responsible for setting the rules; leave the heavy lifting to the AI!
 
+
+## Obsidian is optional
+You don’t need Obsidian to use this system.
+
+The core is **file-based**: Markdown + YAML frontmatter + folder conventions. Agents/skills operate by reading and writing files.
+
+Obsidian (links / MOCs / Dataview) is an optional layer that improves navigation, retrieval, and dashboards—but it’s not a hard dependency.
+
 ## Safety / privacy
 This repo intentionally contains **no private vault data** (no logs, clippings, credentials, account IDs, or absolute machine paths).
 

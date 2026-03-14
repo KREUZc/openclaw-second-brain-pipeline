@@ -105,6 +105,12 @@ macOS 常見是大小寫不敏感檔案系統，case-only rename 可能造成搬
 
 AI 就會自動去修改對應的腳本路徑與寫入規則。你的大腦只負責制定規則，剩下的勞力活全交給 AI！
 
+
+## 不用 Obsidian 也能運作
+這套系統的核心是**檔案系統上的 Markdown + YAML frontmatter + 資料夾規範**。因此即使你不用 Obsidian，也可以照樣使用 skills 與 pipeline。
+
+Obsidian（links / MOC / Dataview）主要是加分層：讓你更容易瀏覽、檢索與看板化，不是必要依賴。
+
 ## Safety / Privacy
 此 repo **不包含**：logs、clippings、憑證、帳號、token、或任何絕對路徑。
 
