@@ -81,6 +81,29 @@ macOS 常見是大小寫不敏感檔案系統，case-only rename 可能造成搬
 - 與該 md 同層建立 `asset/`
 - 用 Obsidian 內嵌：`![[asset/filename.jpg]]`
 
+### Q7：我要怎麼看懂這個Vault？
+- 📂 Vault 目錄結構與彈性擴充
+這套 Vault 提供的是一個「骨架」，我們刻意留下了編號的空白，讓你可以自由長出屬於你的血肉。
+
+* `00_Pupil/`：漏斗層。包含永不刪除的 `00-1_Inbox` 與加工中的 `00-2_Processing`。
+* `03_Solid_Knowledge/`：知識庫層。存放提煉後的 `03-1_Permanent_Notes`。
+* `12_OpenClaw_Logs/`：AI 的軌跡紀錄。
+* `99_Meta/`：系統層。包含 MOC、Runbooks、Specs 與腳本。
+
+**💡 留白的編號，就是你的自由空間：**
+你可以利用斷號自由擴充你的專案或生活領域。例如：
+* 新增 `01_Master_Projects/` 來管理你的主力專案（如：OpenClaw 開發、Tide 社交 App 開發、或是《Rational Gain》寫作計畫）。
+* 新增 `02_Family_Diary/` 來記錄生活點滴與家庭日誌。
+
+### Q8：領域越來越多，永久筆記怎麼分得更清楚？
+- 🛠️ 極度自由的客製化：讓 AI 自己改寫規則
+第二大腦是非常私人的習慣。如果你覺得預設的分類不合胃口，或者你想把永久卡片依照主題存進不同的資料夾，**你不需要自己動手改 Code！**
+
+這套系統的核心精神是「AI 代理」。你只需要直接對你的 AI Assistant（例如你的 OpenClaw Agent）下達自然語言指令：
+> _「請幫我修改 `Permanent Card Forger` 這個技能。以後寫入永久卡片時，如果標籤包含 #Tech，就幫我存進 `03-1_Permanent_Notes/Tech` 目錄下。」_
+
+AI 就會自動去修改對應的腳本路徑與寫入規則。你的大腦只負責制定規則，剩下的勞力活全交給 AI！
+
 ## Safety / Privacy
 此 repo **不包含**：logs、clippings、憑證、帳號、token、或任何絕對路徑。
 
