@@ -85,7 +85,7 @@ macOS 常見是大小寫不敏感檔案系統，case-only rename 可能造成搬
 此 repo **不包含**：logs、clippings、憑證、帳號、token、或任何絕對路徑。
 
 ## License
-CC BY 4.0（詳見 `LICENSE`）
+MIT License（詳見 `LICENSE`）
 
 ---
 English version: `README.en.md`
