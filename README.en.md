@@ -81,4 +81,4 @@ Put them in a same-level `asset/` folder and embed via `![[asset/filename.jpg]]`
 This repo intentionally contains **no private vault data** (no logs, clippings, credentials, account IDs, or absolute machine paths).
 
 ## License
-CC BY 4.0 — see `LICENSE`.
+MIT License（詳見 `LICENSE`）
