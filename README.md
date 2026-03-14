@@ -111,6 +111,11 @@ AI 就會自動去修改對應的腳本路徑與寫入規則。你的大腦只�
 
 Obsidian（links / MOC / Dataview）主要是加分層：讓你更容易瀏覽、檢索與看板化，不是必要依賴。
 
+
+
+## AI 上手
+- 讓 AI 帶你 10 分鐘跑通最小閉環：`vault/99_Meta/AI-Onboarding.md`
+
 ## Safety / Privacy
 此 repo **不包含**：logs、clippings、憑證、帳號、token、或任何絕對路徑。
 

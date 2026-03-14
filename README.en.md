@@ -39,6 +39,7 @@ For the full spec, see: `vault/99_Meta/SecondBrain-Protocol.md`
 1) Install Obsidian (desktop)
 2) Copy `vault/` as your new vault (or merge into an existing one)
    - **Important**: have your OpenClaw (or main agent) read `vault/99_Meta/SecondBrain-Protocol.md` first, so the hard rules and file destinations are loaded before you start producing.
+   - **AI onboarding**: run the 10-minute minimum loop in `vault/99_Meta/AI-Onboarding.en.md`.
 3) Open `vault/99_Meta/MOC/moc-ai-automation.md` as your home dashboard
 4) Add runbooks/specs gradually—don’t try to pre-create the entire taxonomy
 
