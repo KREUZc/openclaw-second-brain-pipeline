@@ -88,6 +88,7 @@ macOS 常見是大小寫不敏感檔案系統，case-only rename 可能造成搬
 * `00_Pupil/`：漏斗層。包含永不刪除的 `00-1_Inbox` 與加工中的 `00-2_Processing`。
 * `03_Solid_Knowledge/`：知識庫層。存放提煉後的 `03-1_Permanent_Notes`。
 * `12_OpenClaw_Logs/`：AI 的軌跡紀錄。
+* `20_Runbooks`, `21_Crew_Own_Projects`：2X是AI作業的區段編號。AI 運作的Skills放在它系統的資料夾，但原始spec及可讀的runbooks仍在「第二大腦」中。
 * `99_Meta/`：系統層。包含 MOC、Runbooks、Specs 與腳本。
 
 **💡 留白的編號，就是你的自由空間：**
