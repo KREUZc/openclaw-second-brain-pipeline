@@ -32,6 +32,12 @@ summary: "讓 AI 帶人類快速上手本 vault：先讀協議、遵守寫入邊
 3) 你現在要用 Obsidian 嗎？
    - 這套系統 **不依賴 Obsidian**；Obsidian 只是讓檢索/看板更方便。
 
+## 2.5) 新想法總入口（MOC）與升級閾值
+- 新想法總入口：`vault/99_Meta/MOC/moc-new-ideas.md`
+- 每個新想法：Inbox 落檔後，補一條連結到這張 MOC（加 summary/status）。
+- 升級觸發：同一想法達成 **第 3 次互動**才詢問升級成永久卡片/spec/runbook。
+  - 互動計數（嚴格）：只有「AI 主動發問 + 人類回覆」算 1 次。
+
 ## 3) 10 分鐘上手：最小閉環（MVP）
 
 ### Step A — Capture：寫下一個想法（1–2 分鐘）

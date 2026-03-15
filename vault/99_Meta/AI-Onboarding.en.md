@@ -32,6 +32,12 @@ This file is written for an AI agent to follow, and for a human to skim. Goal: *
 3) Are you using Obsidian?
    - This system does **not** depend on Obsidian. Obsidian mainly improves navigation and dashboards.
 
+## 2.5) New ideas MOC + upgrade threshold
+- New ideas dashboard: `vault/99_Meta/MOC/moc-new-ideas.md`
+- Every new idea: after creating the Inbox note, add a link to this MOC (with a 1-line summary + status).
+- Upgrade trigger: only after the **3rd validated interaction** do we ask to upgrade into a permanent note / spec / runbook.
+  - Strict counting: only counts when the **agent asks a question and the human replies**.
+
 ## 3) 10-minute onboarding: the Minimum Working Loop (MWL)
 
 ### Step A — Capture a raw idea (1–2 min)
