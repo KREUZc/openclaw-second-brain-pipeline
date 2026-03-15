@@ -116,6 +116,11 @@ Obsidian（links / MOC / Dataview）主要是加分層：讓你更容易瀏覽�
 ## AI 上手
 - 讓 AI 帶你 10 分鐘跑通最小閉環：`vault/99_Meta/AI-Onboarding.md`
 
+
+## 新想法入口（Sparks）
+- 新想法總入口 MOC：`vault/99_Meta/MOC/moc-new-ideas.md`
+  - 每個想法先落 Inbox，再掛到這張 MOC；第 3 次『我問＋你回』才升級成永久卡片/spec/runbook。
+
 ## Safety / Privacy
 此 repo **不包含**：logs、clippings、憑證、帳號、token、或任何絕對路徑。
 

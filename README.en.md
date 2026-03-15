@@ -110,6 +110,11 @@ The core is **file-based**: Markdown + YAML frontmatter + folder conventions. Ag
 
 Obsidian (links / MOCs / Dataview) is an optional layer that improves navigation, retrieval, and dashboards—but it’s not a hard dependency.
 
+
+## New ideas entry (Sparks)
+- New ideas dashboard (MOC): `vault/99_Meta/MOC/moc-new-ideas.md`
+  - Capture every idea in Inbox, link it here; only upgrade after the 3rd validated Q&A (agent asks + human replies).
+
 ## Safety / privacy
 This repo intentionally contains **no private vault data** (no logs, clippings, credentials, account IDs, or absolute machine paths).
 
