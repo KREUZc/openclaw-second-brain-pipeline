@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw Second Brain Pipeline</title>
+  <meta name="description" content="A file-based Second Brain your agent can actually operate. Rules, SSOT, and traceable writing." />
+  <style>
+    :root{--bg:#0b0f14;--panel:#0f1722;--text:#e6edf3;--muted:#9fb0c0;--accent:#6ee7ff;--line:#233041;--btn:#122033;}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
+    a{color:var(--accent); text-decoration:none}
+    .wrap{max-width:980px; margin:0 auto; padding:48px 20px 80px;}
+    .hero{display:grid; gap:16px;}
+    h1{font-size:40px; line-height:1.1; margin:0;}
+    .sub{color:var(--muted); font-size:18px; max-width:70ch;}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
+    .btn{background:var(--btn); border:1px solid var(--line); color:var(--text); padding:10px 14px; border-radius:10px; font-weight:600; display:inline-block}
+    .btn.primary{background:rgba(110,231,255,.12); border-color:rgba(110,231,255,.35)}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:28px;}
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px;}
+    .card h3{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+    .card p{margin:0; color:var(--text)}
+    .section{margin-top:40px;}
+    .section h2{margin:0 0 12px; font-size:20px;}
+
+    /* Spark demo */
+    .spark{background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px;}
+    .term{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; font-size:13px; line-height:1.45; color:var(--text)}
+    .bubble{padding:10px 12px; border-radius:12px; border:1px solid var(--line); margin:8px 0; background:#0b1320}
+    .muted{color:var(--muted)}
+    .logline{padding:8px 10px; border-radius:10px; border:1px dashed #2b3a4c; margin-top:8px; position:relative; overflow:hidden;}
+    .pulse{position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(110,231,255,.18), transparent); transform:translateX(-100%);}
+    .replay{margin-top:10px; background:transparent; border:1px solid var(--line); color:var(--text); padding:8px 10px; border-radius:10px; font-weight:600; cursor:pointer}
+    .replay:focus{outline:2px solid rgba(110,231,255,.5); outline-offset:2px;}
+
+    @media (max-width: 860px){.grid{grid-template-columns:1fr;}}
+    @media (prefers-reduced-motion: reduce){
+      .pulse{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>A file-based Second Brain your agent can actually operate.</h1>
+      <div class="sub">Rules, SSOT, and traceable writing — so ideas don’t vanish and outputs ship.</div>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/KREUZc/openclaw-second-brain-pipeline" target="_blank" rel="noreferrer">Star on GitHub</a>
+        <a class="btn" href="https://github.com/KREUZc/openclaw-second-brain-pipeline" target="_blank" rel="noreferrer">Use the template</a>
+        <a class="btn" href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/SecondBrain-Protocol.md" target="_blank" rel="noreferrer">Read the Protocol</a>
+      </div>
+      <div class="muted">MIT • Privacy-safe template • Obsidian optional</div>
+    </header>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card"><h3>Problem</h3><p>Ideas scatter across apps.</p></div>
+        <div class="card"><h3>Problem</h3><p>AI forgets rules and repeats mistakes.</p></div>
+        <div class="card"><h3>Problem</h3><p>You can’t trace back to the original.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Moment: Spark captured</h2>
+      <div class="muted">Default: static preview. Click Replay to play once.</div>
+      <div class="spark term" aria-label="Spark captured demo">
+        <div class="bubble"><span class="muted">User typing:</span><br>
+          <span>I have an idea: a tiny animation that makes capturing sparks feel sacred.</span>
+        </div>
+        <div class="bubble"><span class="muted">OpenClaw:</span><br>
+          <span>Captured. I’ll save this as a Spark in your Inbox and link it to the New Ideas dashboard.</span>
+        </div>
+        <div class="logline" aria-label="Saved path"><span class="muted">Saved →</span> <span>00_Pupil/00-1_Inbox/20260316-xxxx-spark-capture-animation.md</span><div class="pulse" id="p1" aria-hidden="true"></div></div>
+        <div class="logline" aria-label="Linked path"><span class="muted">Linked →</span> <span>99_Meta/MOC/moc-new-ideas.md</span><div class="pulse" id="p2" aria-hidden="true"></div></div>
+        <button class="replay" id="replay">Replay</button>
+        <div class="muted" style="margin-top:8px;">Saved. Linked. Traceable.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The Minimum Working Loop (10 minutes)</h2>
+      <div class="card">
+        <p>Capture → Clip → Forge. Start with the AI onboarding guide and ship your first reusable note.</p>
+        <p style="margin-top:10px;">
+          <a href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/AI-Onboarding.en.md" target="_blank" rel="noreferrer">AI Onboarding (10-minute loop)</a>
+          •
+          <a href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/MOC/moc-new-ideas.md" target="_blank" rel="noreferrer">New Ideas dashboard</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Quickstart</h2>
+      <div class="card"><p>Next: replace this block with copy-paste steps (template → open vault → follow protocol/onboarding).</p></div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/KREUZc/openclaw-second-brain-pipeline" target="_blank" rel="noreferrer">Star on GitHub</a>
+        <a class="btn" href="https://github.com/KREUZc/openclaw-second-brain-pipeline" target="_blank" rel="noreferrer">Use the template</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Replay-only (owner decision). No autoplay.
+    const replayBtn = document.getElementById("replay");
+    const p1 = document.getElementById("p1");
+    const p2 = document.getElementById("p2");
+
+    function pulse(el, delay){
+      if (!el) return;
+      el.style.transition = "none";
+      el.style.transform = "translateX(-100%)";
+      setTimeout(() => {
+        el.style.transition = "transform 700ms ease";
+        el.style.transform = "translateX(100%)";
+      }, delay);
+    }
+
+    replayBtn?.addEventListener("click", () => {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return; // stays static
+      pulse(p1, 80);
+      pulse(p2, 220);
+    });
+  </script>
+</body>
+</html>
