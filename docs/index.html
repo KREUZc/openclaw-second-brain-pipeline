@@ -30,7 +30,14 @@
     .muted{color:var(--muted)}
     .logline{padding:8px 10px; border-radius:10px; border:1px dashed #2b3a4c; margin-top:8px; position:relative; overflow:hidden;}
     .pulse{position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(110,231,255,.18), transparent); transform:translateX(-100%);}
-    .replay{margin-top:10px; background:transparent; border:1px solid var(--line); color:var(--text); padding:8px 10px; border-radius:10px; font-weight:600; cursor:pointer}
+    @keyframes flashBg {
+          0%{background:rgba(110,231,255,.00)}
+          30%{background:rgba(110,231,255,.10)}
+          100%{background:rgba(110,231,255,.00)}
+        }
+        .flash{animation: flashBg 700ms ease 1;}
+        .flashBorder{box-shadow:0 0 0 1px rgba(110,231,255,.45) inset;}
+        .replay{margin-top:10px; background:transparent; border:1px solid var(--line); color:var(--text); padding:8px 10px; border-radius:10px; font-weight:600; cursor:pointer}
     .replay:focus{outline:2px solid rgba(110,231,255,.5); outline-offset:2px;}
 
     @media (max-width: 860px){.grid{grid-template-columns:1fr;}}
@@ -112,15 +119,34 @@
       if (!el) return;
       el.style.transition = "none";
       el.style.transform = "translateX(-100%)";
+      // Force reflow so repeated clicks restart the animation reliably.
+      void el.offsetWidth;
       setTimeout(() => {
         el.style.transition = "transform 700ms ease";
         el.style.transform = "translateX(100%)";
       }, delay);
     }
 
+    function flash(container){
+      if (!container) return;
+      container.classList.remove("flash");
+      container.classList.remove("flashBorder");
+      // Force reflow
+      void container.offsetWidth;
+      container.classList.add("flash");
+      container.classList.add("flashBorder");
+      setTimeout(() => {
+        container.classList.remove("flash");
+        container.classList.remove("flashBorder");
+      }, 900);
+    }
+
     replayBtn?.addEventListener("click", () => {
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce) return; // stays static
+      const logLines = document.querySelectorAll(".logline");
+      // Always provide feedback (even if reduced motion is enabled)
+      logLines.forEach((el) => flash(el));
+      if (reduce) return;
       pulse(p1, 80);
       pulse(p2, 220);
     });
