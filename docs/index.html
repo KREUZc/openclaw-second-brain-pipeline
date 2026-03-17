@@ -22,6 +22,11 @@
     .card p{margin:0; color:var(--text)}
     .section{margin-top:40px;}
     .section h2{margin:0 0 12px; font-size:20px;}
+    .lead{color:var(--muted); margin:-6px 0 14px;}
+    .steps{margin:10px 0 0 18px;}
+    .steps li{margin:6px 0;}
+    .inlineCta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    .btn.small{padding:8px 10px; border-radius:10px; font-size:14px;}
 
     .details{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px;}
     details summary{cursor:pointer; color:var(--text); font-weight:700;}
@@ -83,6 +88,7 @@
 
 <section class="section">
       <h2>Three decisions that make it work</h2>
+      <div class="lead">A simple governance layer: capture, trace, and upgrade without losing the original.</div>
       <div class="grid">
         <div class="card"><h3>Inbox retention</h3><p>Raw ideas are append-only. Follow-ups are copies.</p></div>
         <div class="card"><h3>SSOT</h3><p>Protocol + runbooks + specs. No tribal memory.</p></div>
@@ -92,6 +98,7 @@
 
 <section class="section">
       <h2>Moment: Spark captured</h2>
+      <div class="lead">This is the feeling: the idea is saved and linked instantly — with a visible trail.</div>
       <div class="muted">Static preview (no autoplay).</div>
       <div class="spark term" aria-label="Spark captured demo">
         <div class="bubble"><span class="muted">User typing:</span><br>
@@ -123,14 +130,20 @@
     
     
 
-<section class="section">
+
+    <section class="section">
       <h2>Quickstart</h2>
+      <div class="lead">Template-first. Then follow the 10-minute loop.</div>
       <div class="card">
-        <p><strong>Recommended:</strong> use the GitHub template, then open the <code>vault/</code> folder and follow the protocol.</p>
-        <ol class="muted" style="margin:10px 0 0 18px;">
-          <li>Click <strong>Use the template</strong> on GitHub and create your repo.</li>
+        <div class="inlineCta">
+          <a class="btn primary small" href="https://github.com/KREUZc/openclaw-second-brain-pipeline/generate" target="_blank" rel="noreferrer">Use the template</a>
+          <a class="btn small" href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/AI-Onboarding.en.md" target="_blank" rel="noreferrer">AI Onboarding</a>
+          <a class="btn small" href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/SecondBrain-Protocol.md" target="_blank" rel="noreferrer">Protocol</a>
+        </div>
+        <ol class="steps muted">
+          <li>Create your repo from the template.</li>
           <li>Open <code>vault/</code> (Obsidian optional).</li>
-          <li>Start here: <a href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/AI-Onboarding.en.md" target="_blank" rel="noreferrer">AI Onboarding</a> → <a href="https://github.com/KREUZc/openclaw-second-brain-pipeline/tree/main/vault/99_Meta/SecondBrain-Protocol.md" target="_blank" rel="noreferrer">Protocol</a>.</li>
+          <li>Run the minimum loop: Inbox → Clipping → Permanent.</li>
         </ol>
       </div>
 
