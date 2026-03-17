@@ -76,7 +76,7 @@
 
     <section class="section">
       <h2>Moment: Spark captured</h2>
-      <div class="muted">Default: static preview. Click Replay to play once.</div>
+      <div class="muted">Static preview (no autoplay).</div>
       <div class="spark term" aria-label="Spark captured demo">
         <div class="bubble"><span class="muted">User typing:</span><br>
           <span>I have an idea: a tiny animation that makes capturing sparks feel sacred.</span>
@@ -84,10 +84,9 @@
         <div class="bubble"><span class="muted">OpenClaw:</span><br>
           <span>Captured. I’ll save this as a Spark in your Inbox and link it to the New Ideas dashboard.</span>
         </div>
-        <div class="logline" aria-label="Saved path"><span class="muted">Saved →</span> <span>00_Pupil/00-1_Inbox/20260316-xxxx-spark-capture-animation.md</span><div class="pulse" id="p1" aria-hidden="true"></div></div>
-        <div class="logline" aria-label="Linked path"><span class="muted">Linked →</span> <span>99_Meta/MOC/moc-new-ideas.md</span><div class="pulse" id="p2" aria-hidden="true"></div></div>
-        <button class="replay" id="replay">Replay</button>
-        <div class="muted" style="margin-top:8px;">Saved. Linked. Traceable.</div>
+        <div class="logline" aria-label="Saved path"><span class="muted">Saved →</span> <span>00_Pupil/00-1_Inbox/20260316-xxxx-spark-capture-animation.md</span></div>
+        <div class="logline" aria-label="Linked path"><span class="muted">Linked →</span> <span>99_Meta/MOC/moc-new-ideas.md</span></div>
+<div class="muted" style="margin-top:8px;">Saved. Linked. Traceable.</div>
       </div>
     </section>
 
@@ -131,48 +130,5 @@ cd openclaw-second-brain-pipeline
       </div>
     </section>
   </main>
-
-  <script>
-    // Replay-only (owner decision). No autoplay.
-    const replayBtn = document.getElementById("replay");
-    const p1 = document.getElementById("p1");
-    const p2 = document.getElementById("p2");
-
-    function pulse(el, delay){
-      if (!el) return;
-      el.style.transition = "none";
-      el.style.transform = "translateX(-100%)";
-      // Force reflow so repeated clicks restart the animation reliably.
-      void el.offsetWidth;
-      setTimeout(() => {
-        el.style.transition = "transform 700ms ease";
-        el.style.transform = "translateX(100%)";
-      }, delay);
-    }
-
-    function flash(container){
-      if (!container) return;
-      container.classList.remove("flash");
-      container.classList.remove("flashBorder");
-      // Force reflow
-      void container.offsetWidth;
-      container.classList.add("flash");
-      container.classList.add("flashBorder");
-      setTimeout(() => {
-        container.classList.remove("flash");
-        container.classList.remove("flashBorder");
-      }, 900);
-    }
-
-    replayBtn?.addEventListener("click", () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const logLines = document.querySelectorAll(".logline");
-      // Always provide feedback (even if reduced motion is enabled)
-      logLines.forEach((el) => flash(el));
-      if (reduce) return;
-      pulse(p1, 80);
-      pulse(p2, 220);
-    });
-  </script>
 </body>
 </html>
