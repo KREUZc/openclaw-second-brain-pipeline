@@ -40,12 +40,111 @@
 3) 打開 `vault/99_Meta/MOC/moc-ai-automation.md` 當首頁
 4) 依你的工作流逐步加 runbook/spec，而不是先把目錄塞滿
 
+
+## AI 導入程序（框架包版本，不干涉個人處理模型）
+
+這個 repo 的定位是「框架包」：提供共用骨架與程序指引，不綁定每個人的思考流程或執行偏好。
+
+### Step 1) 讓 AI 先讀程序指引
+請先要求 AI 讀以下檔案，再開始任何寫入：
+- `vault/99_Meta/SecondBrain-Protocol.md`
+- `vault/11_Clipping/README.md`
+- （若有）你自己的專案規範檔
+
+建議指令：
+> 先讀第二大腦協議與 clipping 路由規則，再開始今天的整理任務。
+
+### Step 2) 分兩段初始化：建目錄、建 skill
+1. **建目錄**（先有空間）
+   - 先建立 `vault/01_Master_Projects/`
+   - 再建立第一個專案（例如）：
+     - `01_Job_Lv_Up`（工作）
+     - `02_Creative_Studio`（創作）
+     - `03_Startup_Studio`（創業）
+   - 每個專案至少先有：
+     - `clips/`
+     - `clips/assets/`
+     - `clips_log.md`
+
+2. **建 skill**（再有流程）
+   - 先用最小 skill（例如 `clipping-router`）
+   - 重點是固定：capture → route → log → report
+
+### Step 3) 引導第一個 clipping（最小閉環）
+三選一即可：
+1. 使用者剛讀的一篇文章
+2. 使用者關心的一個 GitHub repo
+3. 若使用者沒給來源，請 AI 先找一個最近熱門關鍵詞相關內容（由 AI 提議後再執行）
+
+完成標準：
+- clipping 先落 `11_Clipping/`
+- 路由到目標專案 `clips/`
+- 更新 `clips_log.md`（摘要 + 行動建議）
+- 在對話中回報摘要 + 行動建議全文
+
+### Step 4) 引導第一個 spark idea
+來源優先順序：
+1. AI 與使用者最近對話中的新想法
+2. 使用者最近反覆關心的主題
+3. clipping 後自然延伸出的可行問題
+
+最小流程：
+- 先問 2–3 個聚焦問題
+- 產出一個可執行下一步（next action）
+- 視需要再決定是否升級為 spec / runbook / permanent note
+
+> 目標不是一次做滿，而是先跑通第一個「clipping + spark」閉環。
+
 ## Skills（附帶技能）
 - `zettel-spark-catcher/`：接住「新想法」，先問 2–3 個關鍵問題深化，並保留 raw inbox
 - `zettel-permanent-card-forger/`：把素材鑄造成原子化永久筆記（要求 tags 2–4，包含 summary）
 - `mycrew-diary-skill/`：日記生成器（腳本支援用環境變數 `VAULT` 指定 vault root）
+- `clipping-router/`：把 clipping 從 `11_Clipping` 路由到專案 `clips/`，同步更新 `clips_log.md`
 
 > 注意：此 repo 內 skills 是「可發佈快照」，不會改動你本機正在運作的 production skills。
+
+## Clipping Router 升級重點（優點）
+這次升級的核心是把 clipping 從「暫存」升級為「專案可執行資產」。
+
+主要優點：
+- **降低混亂**：先進 `11_Clipping`，再按規則路由，不會長期堆在同一層。
+- **保留可追溯性**：每篇都要寫入 `clips_log.md`，可快速回看來源、摘要、下一步。
+- **附件不丟失**：主檔移動時，附件同步移到 `clips/assets/`。
+- **可批次整理**：同一時段 clipping 可按路由邏輯快速歸檔到對應專案。
+- **對 AI 友善**：路由規則是結構化邏輯，token 成本更低、行為更穩定。
+
+## Clipping Router 如何使用（實作流程）
+1. 先把新連結整理成 clipping 檔，放在：
+   - `vault/11_Clipping/`
+2. 若有附件，先放：
+   - `vault/11_Clipping/assets/`
+3. 判斷主題對應專案，移動到：
+   - `vault/01_Master_Projects/<project>/clips/`
+4. 若有附件，同步移動到：
+   - `vault/01_Master_Projects/<project>/clips/assets/`
+5. 更新：
+   - `vault/01_Master_Projects/<project>/clips_log.md`
+6. 每篇需補：
+   - 摘要（50–100 字）
+   - 行動建議（50–100 字）
+
+## 範例（以 vocus 文章為例）
+來源：<https://vocus.cc/article/699c4d01fd89780001cfa171>
+
+假設主題判定為「職涯升級」，可路由到：
+- `vault/01_Master_Projects/01_Job_Lv_Up/clips/`
+
+示範路徑：
+- clipping 主檔：
+  - `vault/01_Master_Projects/01_Job_Lv_Up/clips/20260409-xxxx-vocus-699c4d01-job-up.md`
+- 附件（若有）：
+  - `vault/01_Master_Projects/01_Job_Lv_Up/clips/assets/20260409-xxxx-vocus-699c4d01-job-up.jpg`
+
+示範 clips_log 條目：
+- 摘要（50–100 字）：
+  - 這篇文章聚焦職涯升級的策略與行動分解，從目標設定、能力盤點到執行節奏，提供可落地的步驟化框架，適合作為短中期職涯規劃參考。
+- 行動建議（50–100 字）：
+  - 先用文中框架做一次「目標－能力－差距」盤點，接著列出未來 4 週可完成的三個高影響行動，並每週回顧一次成果與阻礙，迭代調整節奏。
 
 ## 我們克服的問題（Troubleshooting）
 
