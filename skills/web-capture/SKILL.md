@@ -21,8 +21,16 @@ This skill is optimized for:
 ## Safety / boundaries (hard)
 1) **Public pages only by default.**
    - If the page requires login, paywall, or contains personal/private content → STOP and ask for explicit permission + scope.
-2) **Do not bypass access controls** or “break” protections.
-3) Always preserve **source attribution** (URL + publisher).
+
+2) **Operator confirmation shorthand (allowed)**
+   - If the user replies with **「確認」** for a given URL request, treat it as:
+     - public page, no login
+     - no personal/private data
+     - ok to capture and quote
+   - If the page visibly shows a login wall, private profile, or requires account access, STOP anyway and report the block (do not proceed).
+
+3) **Do not bypass access controls** or “break” protections.
+4) Always preserve **source attribution** (URL + publisher).
 
 ## Tooling strategy (in order)
 1) **Chrome DevTools MCP (preferred)**
